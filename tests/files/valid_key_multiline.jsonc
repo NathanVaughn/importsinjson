@@ -1,0 +1,7 @@
+{
+    // Inline comment
+    "$import": "imported_multiline.jsonc"
+    /*
+    Multi-line comment
+    */
+}

@@ -1,0 +1,6 @@
+{
+    "listkey": [
+        "$import:imported.json:key1",
+        "$import:imported.json:/key2/"
+    ]
+}

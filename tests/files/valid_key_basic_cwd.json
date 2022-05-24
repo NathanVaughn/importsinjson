@@ -1,0 +1,3 @@
+{
+    "$import": "tests/files/imported.json"
+}

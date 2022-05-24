@@ -1,0 +1,4 @@
+{
+    // Inline comment
+    "$import": "imported_inline.jsonc"
+}
