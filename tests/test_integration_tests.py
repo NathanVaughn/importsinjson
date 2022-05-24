@@ -130,6 +130,7 @@ def test_commentjson() -> None:
             "key3": {"key4": "value4", "key5": "value5"},
         }
 
+
 def test_pyjson5() -> None:
     with open(os.path.join(FILES_DIR, "valid_key_multiline.jsonc"), "r") as fp:
         importsinjson._load_fn = pyjson5.load
