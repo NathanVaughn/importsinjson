@@ -1,11 +1,11 @@
 [tool.poetry]
-    name = "jsonimport"
+    name = "importsinjson"
     version = "0.1.0"
     description = "Adding import functionality to JSON files"
     license = "MIT"
     readme = "README.md"
-    homepage = "https://github.com/NathanVaughn/jsonimport"
-    repository = "https://github.com/NathanVaughn/jsonimport.git"
+    homepage = "https://github.com/NathanVaughn/importsinjson"
+    repository = "https://github.com/NathanVaughn/importsinjson.git"
     authors = ["Nathan Vaughn <nvaughn51@gmail.com>"]
     classifiers = [
         "Intended Audience :: Developers",
@@ -14,7 +14,7 @@
     ]
 
 [tool.poetry.urls]
-    Issues = "https://github.com/NathanVaughn/jsonimport/issues"
+    Issues = "https://github.com/NathanVaughn/importsinjson/issues"
 
 [tool.poetry.dependencies]
     python      = ">=3.7,<4.0"

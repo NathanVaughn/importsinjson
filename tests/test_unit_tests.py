@@ -2,7 +2,7 @@ from typing import Any, Type
 
 import pytest
 
-import jsonimport
+import importsinjson
 
 
 @pytest.mark.parametrize(
@@ -14,7 +14,7 @@ import jsonimport
     ],
 )
 def test_get_key_pass(source_data: Any, key: str, value: Any) -> None:
-    assert jsonimport._get_key(source_data, key) == value
+    assert importsinjson._get_key(source_data, key) == value
 
 
 @pytest.mark.parametrize(
@@ -30,4 +30,4 @@ def test_get_key_pass(source_data: Any, key: str, value: Any) -> None:
 )
 def test_get_key_fail(source_data: Any, key: str, error: Type[Exception]) -> None:
     with pytest.raises(error):
-        jsonimport._get_key(source_data, key)
+        importsinjson._get_key(source_data, key)

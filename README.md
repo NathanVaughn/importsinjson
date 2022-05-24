@@ -1,24 +1,24 @@
-# JSONImport
+# ImportsInJSON
 
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![GitHub license](https://img.shields.io/github/license/NathanVaughn/jsonimport)](https://github.com/NathanVaughn/jsonimport/blob/master/LICENSE)
-[![PyPi versions](https://img.shields.io/pypi/pyversions/jsonimport)](https://pypi.org/project/jsonimport)
-[![PyPi downloads](https://img.shields.io/pypi/dm/jsonimport)](https://pypi.org/project/jsonimport)
+[![GitHub license](https://img.shields.io/github/license/NathanVaughn/importsinjson)](https://github.com/NathanVaughn/importsinjson/blob/master/LICENSE)
+[![PyPi versions](https://img.shields.io/pypi/pyversions/importsinjson)](https://pypi.org/project/importsinjson)
+[![PyPi downloads](https://img.shields.io/pypi/dm/importsinjson)](https://pypi.org/project/importsinjson)
 
 Python JSON Import Library
 
 ---
 
-JSONImport is an easy way to allow Python to load JSON files that import data
+ImportsInJSON is an easy way to allow Python to load JSON files that import data
 from other JSON files. This is very helpful for splitting up large JSON files
 into smaller chunks that can still be combined.
 
 ## Installation
 
-JSONImport requires Python 3.7+.
+ImportsInJSON requires Python 3.7+.
 
 ```bash
-pip install jsonimport
+pip install importsinjson
 ```
 
 If you'd like to support loading JSON files with comments, either add
@@ -26,14 +26,14 @@ the [`commentjson`](https://pypi.org/project/commentjson/) or
 [`pyjson5`](https://pypi.org/project/pyjson5/) extra when installing.
 
 ```bash
-pip install jsonimport[commentjson]
+pip install importsinjson[commentjson]
 # or
-pip install jsonimport[pyjson5]
+pip install importsinjson[pyjson5]
 ```
 
 ## Usage
 
-In your Python code, `import jsonimport` is a drop-in replacement for the
+In your Python code, `import importsinjson` is a drop-in replacement for the
 [`json`](https://docs.python.org/3/library/json.html) module.
 
 In your JSON document, there are 2 ways to import data from other JSON files.
@@ -57,7 +57,7 @@ and
 }
 ```
 
-Running `jsonimport.load('a.json')` will return the following:
+Running `importsinjson.load('a.json')` will return the following:
 
 ```json
 {
@@ -136,7 +136,7 @@ All normal options for this can be used.
 [Homepage](https://commentjson.readthedocs.io/en/latest/)
 
 ```bash
-pip install jsonimport[commentjson]
+pip install importsinjson[commentjson]
 ```
 
 If installed, `commentjson` will be used as the JSON parsing backend.
@@ -149,7 +149,7 @@ However, it does not support multi-line comments.
 [Homepage](https://pyjson5.readthedocs.io/en/latest/)
 
 ```bash
-pip install jsonimport[pyjson5]
+pip install importsinjson[pyjson5]
 ```
 
 Lastly, if installed, `pyjson5` will be used as the JSON parsing backend.
@@ -163,8 +163,8 @@ If for some reason you want to change the prefix used to import data, you can se
 that like so:
 
 ```python
-import jsonimport
-jsonimport.PREFIX = "$newimportsymbol"
+import importsinjson
+importsinjson.PREFIX = "$newimportsymbol"
 ```
 
 ## Gotchas

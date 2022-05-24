@@ -54,13 +54,13 @@ jobs:
         run: poetry install
 
       - name: Run Black
-        run: poetry run python -m black jsonimport/ --check
+        run: poetry run python -m black importsinjson/ --check
 
       - name: Run Isort
-        run: poetry run python -m isort jsonimport/ --check
+        run: poetry run python -m isort importsinjson/ --check
 
       - name: Run Autoflake
-        run: poetry run python -m autoflake jsonimport/ --recursive --remove-all-unused-imports --check
+        run: poetry run python -m autoflake importsinjson/ --recursive --remove-all-unused-imports --check
 
   type-checking:
     runs-on: ubuntu-latest
@@ -93,10 +93,10 @@ jobs:
         run: npm install pyright
 
       - name: Run Pyright
-        run: poetry run npx pyright jsonimport/
+        run: poetry run npx pyright importsinjson/
 
       - name: Run Pyleft
-        run: poetry run python -m pyleft jsonimport/
+        run: poetry run python -m pyleft importsinjson/
 
   linting:
     runs-on: ubuntu-latest
@@ -119,4 +119,4 @@ jobs:
         run: poetry install
 
       - name: Run Pflake8
-        run: poetry run python -m pflake8 jsonimport/
+        run: poetry run python -m pflake8 importsinjson/

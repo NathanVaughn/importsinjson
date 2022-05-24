@@ -5,7 +5,7 @@ import commentjson
 import pyjson5
 import pytest
 
-import jsonimport
+import importsinjson
 
 FILES_DIR = os.path.join(os.path.dirname(__file__), "files")
 TEST_CASES = (
@@ -82,7 +82,7 @@ def test_loads(filename: str, data: Any) -> None:
 
     with open(os.path.join(FILES_DIR, filename), "r") as fp:
         try:
-            assert jsonimport.loads(fp.read()) == data
+            assert importsinjson.loads(fp.read()) == data
         finally:
             os.chdir(cwd)
 
@@ -90,13 +90,13 @@ def test_loads(filename: str, data: Any) -> None:
 @pytest.mark.parametrize("filename, data", *TEST_CASES)
 def test_load(filename: str, data: Any) -> None:
     with open(os.path.join(FILES_DIR, filename), "r") as fp:
-        assert jsonimport.load(fp) == data
+        assert importsinjson.load(fp) == data
 
 
 def test_load_cwd_fallback() -> None:
     # test loading a file falling back to the current working directory
     with open(os.path.join(FILES_DIR, "valid_key_basic_cwd.json"), "r") as fp:
-        assert jsonimport.load(fp) == {
+        assert importsinjson.load(fp) == {
             "key1": "value1",
             "key2": "value2",
             "key3": {"key4": "value4", "key5": "value5"},
@@ -105,26 +105,26 @@ def test_load_cwd_fallback() -> None:
 
 def test_file_not_found() -> None:
     with open(os.path.join(FILES_DIR, "invalid_key_basic.json"), "r") as fp:
-        assert jsonimport.load(fp) == {"$import": "notreal.json"}
+        assert importsinjson.load(fp) == {"$import": "notreal.json"}
 
     with open(os.path.join(FILES_DIR, "invalid_key_basic.json"), "r") as fp:
         with pytest.raises(FileNotFoundError):
-            jsonimport.load(fp, strict=True)
+            importsinjson.load(fp, strict=True)
 
 
 def test_key_not_found() -> None:
     with open(os.path.join(FILES_DIR, "invalid_key_path.json"), "r") as fp:
-        assert jsonimport.load(fp) == {"$import": "imported.json:/notreal/"}
+        assert importsinjson.load(fp) == {"$import": "imported.json:/notreal/"}
 
     with open(os.path.join(FILES_DIR, "invalid_key_path.json"), "r") as fp:
         with pytest.raises(KeyError):
-            jsonimport.load(fp, strict=True)
+            importsinjson.load(fp, strict=True)
 
 
 def test_commentjson() -> None:
     with open(os.path.join(FILES_DIR, "valid_key_inline.jsonc"), "r") as fp:
-        jsonimport._load_fn = commentjson.load
-        assert jsonimport.load(fp) == {
+        importsinjson._load_fn = commentjson.load
+        assert importsinjson.load(fp) == {
             "key1": "value1",
             "key2": "value2",
             "key3": {"key4": "value4", "key5": "value5"},
@@ -132,8 +132,8 @@ def test_commentjson() -> None:
 
 def test_pyjson5() -> None:
     with open(os.path.join(FILES_DIR, "valid_key_multiline.jsonc"), "r") as fp:
-        jsonimport._load_fn = pyjson5.load
-        assert jsonimport.load(fp) == {
+        importsinjson._load_fn = pyjson5.load
+        assert importsinjson.load(fp) == {
             "key1": "value1",
             "key2": "value2",
             "key3": {"key4": "value4", "key5": "value5"},
