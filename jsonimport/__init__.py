@@ -64,8 +64,8 @@ def _import(
         if source_filename is None:
             import_filepath = os.path.join(os.getcwd(), import_filepath)
         elif os.path.isfile(
-                os.path.join(os.path.dirname(source_filename), import_filepath)
-            ):
+            os.path.join(os.path.dirname(source_filename), import_filepath)
+        ):
             # otherwise, use the directory of the source file
             import_filepath = os.path.join(
                 os.path.dirname(source_filename), import_filepath
