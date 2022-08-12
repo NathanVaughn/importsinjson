@@ -1,6 +1,13 @@
 import json
 import os
-from typing import Any, Optional, Protocol
+import sys
+from typing import Any, Optional
+
+if sys.version < "3.8":
+    from typing_extensions import Protocol
+else:
+    from typing import Protocol
+
 
 try:
     import commentjson
