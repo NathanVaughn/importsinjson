@@ -3,7 +3,7 @@ import os
 import sys
 from typing import Any, Optional
 
-if sys.version < "3.8":
+if sys.version_info.major == 3 and sys.version_info.minor < 8:
     from typing_extensions import Protocol
 else:
     from typing import Protocol
