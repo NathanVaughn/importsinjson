@@ -25,7 +25,7 @@ except ImportError:
         _loads_fn = json.loads
 
 
-class _SupportsRead(Protocol):
+class _SupportsRead(Protocol):  # type: ignore
     def read(self, size: int = ...) -> str:
         ...  # pragma: no cover
 
@@ -90,7 +90,7 @@ def _import(
 
     # import the file
     with open(import_filepath, "r", encoding="utf-8") as fp:
-        import_data = load(fp, strict=strict, **kwargs)
+        import_data = load(fp, strict=strict, **kwargs)  # type: ignore
 
     # no key path given
     if len(import_string_split) == 2:
