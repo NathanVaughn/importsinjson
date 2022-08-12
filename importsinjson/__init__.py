@@ -1,6 +1,13 @@
 import json
 import os
-from typing import Any, Optional, Protocol
+import sys
+from typing import Any, Optional
+
+if sys.version_info.major == 3 and sys.version_info.minor < 8:
+    from typing_extensions import Protocol
+else:
+    from typing import Protocol
+
 
 try:
     import commentjson
@@ -18,7 +25,7 @@ except ImportError:
         _loads_fn = json.loads
 
 
-class _SupportsRead(Protocol):
+class _SupportsRead(Protocol):  # type: ignore
     def read(self, size: int = ...) -> str:
         ...  # pragma: no cover
 
@@ -83,7 +90,7 @@ def _import(
 
     # import the file
     with open(import_filepath, "r", encoding="utf-8") as fp:
-        import_data = load(fp, strict=strict, **kwargs)
+        import_data = load(fp, strict=strict, **kwargs)  # type: ignore
 
     # no key path given
     if len(import_string_split) == 2:
