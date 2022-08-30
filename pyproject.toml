@@ -26,7 +26,7 @@
     pytest           = "^7.1.2"
     black            = "^22.6.0"
     isort            = "^5.10.1"
-    autoflake        = "^1.4"
+    autoflake        = "^1.5"
     pyproject-flake8 = "^0.0.1-alpha.4"
     pyleft           = "^1.1.1"
     flake8           = "<5"
