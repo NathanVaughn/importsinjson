@@ -20,7 +20,7 @@ jobs:
           python-version: "3.11"
 
       - name: Setup Poetry
-        uses: Gr1N/setup-poetry@v7
+        uses: Gr1N/setup-poetry@v8
 
       - name: Get version
         run: echo "PROJECT_VERSION=$(poetry version --short)" >> $GITHUB_ENV
