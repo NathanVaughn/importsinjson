@@ -1,13 +1,6 @@
 import json
 import os
-import sys
-from typing import Any, Optional
-
-if sys.version_info.major == 3 and sys.version_info.minor < 8:
-    from typing_extensions import Protocol
-else:
-    from typing import Protocol
-
+from typing import IO, Any, Optional
 
 try:
     import commentjson
@@ -23,11 +16,6 @@ except ImportError:
     except ImportError:
         _load_fn = json.load
         _loads_fn = json.loads
-
-
-class _SupportsRead(Protocol):  # type: ignore
-    def read(self, size: int = ...) -> str:
-        ...  # pragma: no cover
 
 
 PREFIX = "$import"
@@ -151,7 +139,7 @@ def _import_recursive(
         return json_data
 
 
-def load(fp: _SupportsRead, strict: bool = False, **kwargs) -> Any:
+def load(fp: IO, strict: bool = False, **kwargs) -> Any:
     """
     Deserialize ``fp`` (a ``.read()``-supporting file-like object containing
     a JSON document) to a Python object, processing imports.

@@ -74,7 +74,7 @@ TEST_CASES = (
 )
 
 
-@pytest.mark.parametrize("filename, data", *TEST_CASES)
+@pytest.mark.parametrize("filename, data", *TEST_CASES)  # type: ignore
 def test_loads(filename: str, data: Any) -> None:
     cwd = os.getcwd()
     # need to cd into files direcotry to be in the right working directory
@@ -87,7 +87,7 @@ def test_loads(filename: str, data: Any) -> None:
             os.chdir(cwd)
 
 
-@pytest.mark.parametrize("filename, data", *TEST_CASES)
+@pytest.mark.parametrize("filename, data", *TEST_CASES)  # type: ignore
 def test_load(filename: str, data: Any) -> None:
     with open(os.path.join(FILES_DIR, filename), "r") as fp:
         assert importsinjson.load(fp) == data
