@@ -237,11 +237,11 @@ python-versions = "~=3.5"
 
 [[package]]
 name = "pyleft"
-version = "1.1.1"
+version = "1.1.4"
 description = "Python type annotation existence checker"
 category = "dev"
 optional = false
-python-versions = ">=3.6.2,<4.0"
+python-versions = ">=3.7,<4.0"
 
 [package.dependencies]
 pathspec = ">=0.9.0"
@@ -334,7 +334,7 @@ pyjson5 = ["pyjson5"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<4.0"
-content-hash = "3cdadccda1d02662a480616a94a7b86e3ed583376780c4f38db545c9531f9fc8"
+content-hash = "6ed16b5c5682247f0eab6c8d350cfea29ecae86bb454002b73e9193bcd007755"
 
 [metadata.files]
 attrs = [
@@ -529,8 +529,8 @@ pyjson5 = [
     {file = "pyjson5-1.6.2.tar.gz", hash = "sha256:227a1e5eff5c570281a9154002ad4e15dcbe7c93334fc1b8f3cd132481382a33"},
 ]
 pyleft = [
-    {file = "pyleft-1.1.1-py3-none-any.whl", hash = "sha256:d0d6460792c9d672c843e4bf55a3c2dc7d158387cbc05e0fcec274b9d6a33abc"},
-    {file = "pyleft-1.1.1.tar.gz", hash = "sha256:fe401109ee356c7e5274633417a8d2acdbb1108dd9d60398ec833c0ddd9e2bff"},
+    {file = "pyleft-1.1.4-py3-none-any.whl", hash = "sha256:b5e74e5ac64a94ac47638f723e3a6d0aa00bcc0121f90dc67fbc6cd04a0468c2"},
+    {file = "pyleft-1.1.4.tar.gz", hash = "sha256:2c7e82c72ef548274e8b1fbe24ad4eff775fdf4dbbdc00e229e22200d4d9b8be"},
 ]
 pyparsing = [
     {file = "pyparsing-3.0.9-py3-none-any.whl", hash = "sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"},
