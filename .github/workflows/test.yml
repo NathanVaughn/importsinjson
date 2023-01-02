@@ -41,7 +41,7 @@ jobs:
           restore-keys: pre-commit-
 
       - name: Install Python Dependencies
-        run: poetry install --sync
+        run: poetry install --all-extras --sync
 
       - name: Run Pre-Commit Checks
         run: poetry run pre-commit run --all-files --color=always --show-diff-on-failure

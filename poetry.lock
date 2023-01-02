@@ -463,7 +463,7 @@ files = [
 name = "typing-extensions"
 version = "4.4.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -516,4 +516,4 @@ pyjson5 = ["pyjson5"]
 [metadata]
 lock-version = "2.0"
     python-versions = ">=3.7,<4.0"
-content-hash = "2f4e675ef2dd78f66c2b5bf28603166e7ace9b1d373d6b90e6a98ee16f54e032"
+content-hash = "b06205fb20563ee2356a173aff14d003f89da8829570aa7f698ef6df31b6fe19"
