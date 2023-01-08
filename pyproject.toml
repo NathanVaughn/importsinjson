@@ -34,15 +34,8 @@
     venvPath         = "."
     venv             = ".venv"
 
-[tool.isort]
-    profile = "black"
-
-[tool.autoflake]
-    recursive = true
-
-[tool.flake8]
-    exclude = ".venv"
-    ignore  = "E501, E203, W503"
+[tool.ruff]
+    ignore  = ["E501"]
 
 [build-system]
     requires      = ["poetry-core>=1.0.0"]
